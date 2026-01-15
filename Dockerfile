@@ -9,10 +9,14 @@ RUN apt-get update && apt-get install -y \
     libsm6 \
     libxext6 \
     libxrender1 \
+    libgomp1 \
     build-essential \
     cmake \
     git \
     && rm -rf /var/lib/apt/lists/*
+
+# Optional but recommended (Ultralytics warning fix)
+ENV YOLO_CONFIG_DIR=/tmp/Ultralytics
 
 COPY requirements.txt .
 
