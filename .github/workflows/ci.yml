@@ -30,7 +30,7 @@ jobs:
       # 4️⃣ Basic sanity test
       - name: Run basic import test
         run: |
-          python -c "from app.main import app; print('App loaded successfully')"
+          python -c "from main import app; print('App loaded successfully')"
 
       # 5️⃣ Build Docker image
       - name: Build Docker image
