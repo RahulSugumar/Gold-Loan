@@ -2,7 +2,6 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# System dependencies for OpenCV, InsightFace, ONNX
 RUN apt-get update && apt-get install -y \
     libgl1 \
     libglib2.0-0 \
@@ -15,7 +14,6 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Optional but recommended (Ultralytics warning fix)
 ENV YOLO_CONFIG_DIR=/tmp/Ultralytics
 
 COPY requirements.txt .
