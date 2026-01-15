@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
     git \
-    execstack \
     && rm -rf /var/lib/apt/lists/*
 
 ENV YOLO_CONFIG_DIR=/tmp/Ultralytics
@@ -20,8 +19,7 @@ ENV YOLO_CONFIG_DIR=/tmp/Ultralytics
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt \
-    && execstack -c /usr/local/lib/python3.11/site-packages/onnxruntime/capi/*.so
+    && pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
