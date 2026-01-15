@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
     git \
-    pax-utils \
+    execstack \
     && rm -rf /var/lib/apt/lists/*
 
 ENV YOLO_CONFIG_DIR=/tmp/Ultralytics
